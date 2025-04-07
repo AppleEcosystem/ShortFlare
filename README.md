@@ -19,25 +19,19 @@ A serverless URL shortener built with Cloudflare Workers and KV storage, featuri
 4. Expired links show a friendly expiration message
 
 
-## setup
-1: Create clourflare worker 
-2: paste the worker.js code
-3: Create a KV namespace named LINKS in your Cloudflare dashboard
-4: Bind the KV namespace to your worker from worker settings
-5: Update ALLOWED_IPS in the worker code with your authorized IP addresses
+### setup
+- Create clourflare worker 
+- paste the worker.js code
+- Create a KV namespace named LINKS in your Cloudflare dashboard
+- Bind the KV namespace to your worker from worker settings
+- Update ALLOWED_IPS in the worker code with your authorized IP addresses
 
 ## API Documentation
 
-### Create a Short Link
+### usage
 
-**Endpoint**: `POST /api`
-
-**Headers**:
-- `Content-Type: application/json`
-
-**Request Body**:
-```json
-{
-  "url": "https://example.com",
-  "expiration": 7
-}
+```bash
+curl -X POST "https://your-workerApiLink.com/api" \
+     -H "Content-Type: application/json" \
+     -d '{"url": "http://example.com"}'
+```
